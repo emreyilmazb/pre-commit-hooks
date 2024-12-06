@@ -13,8 +13,12 @@ def draw_tree(height):
         print(spaces + stars)
 
     trunk_width = height // 3 if height > 3 else 1
-    trunk_height = height // 3 if height > 3 else 1
-    trunk_space = " " * (height - trunk_width // 2 - 1)
+    trunk_height = (
+        height // 3 if height > 3 else 1
+    )
+    trunk_space = " " * (
+        height - trunk_width // 2 - 1
+    )
 
     for _ in range(trunk_height):
         print(trunk_space + "|" * trunk_width)
@@ -22,7 +26,11 @@ def draw_tree(height):
 
 if __name__ == "__main__":
     try:
-        user_height = int(input("Enter the height of the tree: "))
+        user_height = int(
+            input(
+                "Enter the height of the tree: "
+            )
+        )
         draw_tree(user_height)
     except ValueError:
         print("Please enter a valid integer!")
